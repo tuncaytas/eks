@@ -4,9 +4,9 @@
 
 
 data "terraform_remote_state" "eks" {
-  backend = "local"
+  backend = "s3"
   config = {
-    path = "../learn-terraform-provision-eks-cluster/terraform.tfstate"
+    path = "s3://tuncayeks/tf-state/eks"
   }
 }
 
