@@ -6,7 +6,9 @@
 data "terraform_remote_state" "eks" {
   backend = "s3"
   config = {
-    path = "s3://tuncayeks/tf-state/eks"
+    bucket = "tuncayeks"  # Specify your S3 bucket name
+    key    = "tf-state/eks/terraform.tfstate"  # Specify the path to your state file within the bucket
+    region = "us-east-1"  # Specify the AWS region where the S3 bucket is located
   }
 }
 
